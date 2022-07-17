@@ -43,7 +43,6 @@ const FormContact = () => {
 
   const handleClick = () => {
     setLoading(true);
-    if (form)
     recaptchaRef.current.execute();
   };
 
