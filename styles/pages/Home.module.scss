@@ -1,0 +1,105 @@
+@import '../utils/variables';
+@import '../utils/media';
+@import '../utils/mixins';
+
+
+.heading {
+  background-image: url('/web-construction-bg.jpg');
+  background-position: center bottom;
+  background-size: cover;
+  min-height: 700px;
+  @include MQ(XXL) {
+    background-size: contain;
+  }
+}
+
+.logoWrapper {
+  margin: 10px 0;
+  @include MQ(M) {
+    margin: 50px 0 150px 0;
+  }
+}
+
+.firstElement {
+  background: $complementary-color;
+  font-weight: $font-bold;
+  padding: 0 15px;
+  color: $primary-color;
+  line-height: 1.4;
+
+  @include MQ(M) {
+    font-size: calc(1rem + 1.5vw);
+    line-height: 1;
+  }
+
+  @include MQ(XL) {
+    font-size: calc(1rem + 1.5vw);
+    line-height: 1.4;
+  }
+  @include MQ(XL) {
+    font-size: 2.5rem;
+    line-height: 1.4;
+  }
+}
+
+.wave {
+  position: relative;
+  top: -3px
+}
+
+.waveSmall {
+  display: none;
+  @include MQ(XXL) {
+    display: block;
+  }
+}
+
+.waveLarge {
+  @include MQ(XXL) {
+    display: none;
+  }
+}
+
+.mainContentWrapper {
+  position: relative;
+  margin-top: -150px;
+  @include MQ(XXL) {
+    margin-top: -100px;
+  }
+}
+
+.rssIcon {
+  position: relative;
+  transition: .5s all ease-in-out;
+
+  &::after {
+    background: $secondary-color;
+    border-radius: 50%;
+    box-shadow: 0 0.5rem 1.5rem rgb(98 52 130 / 20%) !important;
+    content: '';
+    display: block;
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    @include centerer();
+    transition: .5s all ease-in-out;
+
+  }
+
+  &Image {
+    position: relative;
+    z-index: 2;
+    top: -5px;
+  }
+}
+
+.rssLink {
+  color: $white;
+  transition: .05s all ease-in-out;
+  &:hover {
+    color: $complementary-color;
+    .rssIcon::after {
+      background: $ascent-color;
+    }
+  }
+}

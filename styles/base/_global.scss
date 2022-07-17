@@ -1,0 +1,85 @@
+* {
+  box-sizing: border-box;
+}
+html,body{
+  min-height: 100vh;
+}
+html{
+  scroll-behavior: smooth;
+}
+body {
+  font-family: $primary-font;
+  color: $primary-color;
+}
+
+a {
+  color: $primary-color;
+  transition: .2s ease-in-out all;
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+    color: #2F80ED;
+  }
+  &:focus {
+    text-decoration: none;
+    outline: none;
+  }
+}
+
+ul{
+  list-style-type: none;
+  padding-left: 0;
+}
+
+strong, .font-bold {
+  font-weight: $font-bold;
+}
+
+.display-font {
+  font-weight: $font-bold;
+}
+
+.content-wrapper {
+  min-height: calc(100vh - 370px);
+}
+
+@each $name, $color in $palette {
+  .bg-#{""+$name} {
+    background-color: $color !important; 
+  }
+  .text-#{""+$name} {
+    color: $color !important;
+  }
+}
+
+.bg-primary-gradient {
+  background: $primary-gradient;
+}
+
+.bg-secondary-gradient {
+  background: $secondary-gradient;
+}
+
+.shadow {
+  box-shadow: 10px 10px 51px 0px rgb(98 52 130 / 20%) !important;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: rgba($secondary-color, .2)
+}
+
+.h-100 {
+  height: 100%;
+}
+
+.f-700 {
+  font-weight: $font-bold;
+}
+
+.f-800 {
+  font-weight: $font-black;
+}

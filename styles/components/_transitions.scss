@@ -1,0 +1,32 @@
+.alert-enter {
+  opacity: 0;
+  transform: scale(1.1);
+}
+.alert-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms, transform 300ms;
+}
+.alert-exit {
+  opacity: 1;
+}
+.alert-exit-active {
+  opacity: 0;
+  transform: scale(1.1);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.itemApear-enter {
+  opacity: 0;
+}
+.itemApear-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+.itemApear-exit {
+  opacity: 1;
+}
+.itemApear-exit-active {
+  opacity: 0;
+  transition: opacity 10ms ease-in-out;
+}

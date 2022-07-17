@@ -1,0 +1,94 @@
+.btn {
+    border: none;
+    font-weight: $font-bold;
+
+    &-primary {
+        border: 1px solid $secondary-color;
+        background: $primary-gradient;
+        transition: all .1s ease-in-out;
+        &:hover {
+            color: $primary-color;
+            background: $secondary-gradient;
+            box-shadow: 0 0.5rem 1.5rem rgb(98 52 130 / 20%) !important;
+            transform: translateY(-2px);
+        }
+
+        &:focus {
+            outline: none;
+            box-shadow: none;
+            background: $secondary-color;
+        }
+
+        &:disabled {
+            background: $secondary-color !important;
+        }
+    }
+
+    &-secondary{
+        border: 1px solid $secondary-color;
+        background: $secondary-color;
+        transition: all .1s ease-in-out;
+        &:hover {
+            color: $secondary-color;
+            background: $white;
+            box-shadow: 0 0.5rem 1.5rem rgb(98 52 130 / 20%) !important;
+            transform: translateY(-2px);
+        }
+
+        &:focus {
+            outline: none;
+            box-shadow: none;
+            background: $secondary-color;
+            color: $white;
+        }
+
+        &:disabled {
+            background: $secondary-color !important;
+        }
+    }
+
+    &-complementary{
+        border: 1px solid $white;
+        background: transparent !important;
+        color: $white;
+        transition: all .1s ease-in-out;
+        &:hover {
+            color: $white;
+            background: $secondary-color !important;
+            box-shadow: 0 0.5rem 1.5rem rgb(98 52 130 / 20%) !important;
+            transform: translateY(-2px);
+        }
+
+        &:focus {
+            outline: none;
+            box-shadow: none;
+            background: $white;
+        }
+
+        &:disabled {
+            background: $white !important;
+        }
+    }
+    &-white{
+        border: 1px solid $white;
+        background: $white !important;
+        color: $secondary-color;
+        transition: all .1s ease-in-out;
+        &:hover {
+            color: $white;
+            background: $primary-color !important;
+            border: 1px solid $white;
+            box-shadow: 0 0.5rem 1.5rem rgb(98 52 130 / 20%) !important;
+            transform: translateY(-2px);
+        }
+
+        &:focus {
+            outline: none;
+            box-shadow: none;
+        }
+
+        &:disabled {
+            background: $primary-color !important;
+        }
+    }
+}
