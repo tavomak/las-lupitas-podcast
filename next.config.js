@@ -6,7 +6,10 @@ const nextConfig = {
     domains: [
       'localhost',
     ],
-  }
-}
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
