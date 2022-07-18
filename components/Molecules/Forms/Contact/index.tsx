@@ -154,7 +154,7 @@ const FormContact = () => {
       <div className="form-group">
         <Button
           className="btn btn-primary mt-4 text-uppercase py-2 px-4"
-          text="Ingresar"
+          text="Enviar"
           loading={loading}
           submit
         />
