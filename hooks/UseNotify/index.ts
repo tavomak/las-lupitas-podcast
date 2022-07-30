@@ -10,7 +10,7 @@ const toastConfig : ToastOptions = {
   theme: 'colored',
 };
 
-const useNotify = (status, message) => {
+const UseNotify = (status : string, message: string) => {
   switch (status) {
     case 'success':
       toast.success(message, { ...toastConfig });
@@ -30,4 +30,4 @@ const useNotify = (status, message) => {
   }
 };
 
-export default useNotify;
+export default UseNotify;

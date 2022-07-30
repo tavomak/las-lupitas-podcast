@@ -1,6 +1,7 @@
 import type { NextPage } from 'next';
 import { GetStaticProps } from 'next';
 import { getAllServicesForHome } from 'lib';
+import { ToastContainer } from 'react-toastify';
 import Head from 'next/head';
 import Image from 'next/image';
 import FormContact from 'components/Molecules/Forms/Contact';
@@ -163,7 +164,7 @@ const Home: NextPage<Props> = ({ data }) => {
 
       <footer className="container text-center my-5 pb-5">
         <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+          href="https://estelaestudio.com/"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -181,6 +182,7 @@ const Home: NextPage<Props> = ({ data }) => {
           </ul>
         </a>
       </footer>
+      <ToastContainer />
     </>
   );
 };

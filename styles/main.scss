@@ -1,7 +1,6 @@
 // @import 'react-datepicker/dist/react-datepicker.css';
 // @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 @import 'bootstrap/dist/css/bootstrap.css';
-@import 'bootstrap/dist/css/bootstrap.css';
 
 @import "utils/variables";
 @import "utils/media";
@@ -13,3 +12,8 @@
 @import "components/hamburguer";
 @import "components/buttons";
 @import "components/transitions";
+
+
+.grecaptcha-badge {
+  transform: scale(.3);
+}

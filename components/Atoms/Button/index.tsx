@@ -9,8 +9,9 @@ type Props = {
   onClick: React.MouseEventHandler<HTMLButtonElement>,
   imgPrev: React.ReactNode,
   imgNext: React.ReactNode,
-  disabled: boolean | null,
+  disabled: boolean | undefined,
 }
+
 const ButtonSubmit = ({
   loading,
   text,
