@@ -1,5 +1,23 @@
+import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './styles.module.scss';
+
+type Props = {
+  className: string;
+  title: string;
+  subtitle: string;
+  children: string;
+  close: string;
+  handleClose: React.MouseEventHandler<HTMLAnchorElement>;
+  back: boolean,
+  handleBack: React.MouseEventHandler<HTMLAnchorElement>,
+  footer: string;
+  cardBackground: string | undefined;
+  onMouseLeave: React.MouseEventHandler<HTMLDivElement>,
+  shadow: boolean,
+  bRadius: string,
+  noBorderLine: boolean,
+}
 
 const Card = ({
   className,
@@ -16,10 +34,14 @@ const Card = ({
   shadow,
   bRadius,
   noBorderLine,
-}) => (
+}: Props) => (
   <div
     className={`card py-4 px-3 ${shadow ? 'shadow' : ''} ${className} ${styles.mainCard}`}
-    style={{ borderRadius: bRadius, border: noBorderLine ? 'none' : '', backgroundImage: cardBackground ? `url(${cardBackground})` : null }}
+    style={{
+      borderRadius: bRadius,
+      border: noBorderLine ? 'none' : '',
+      backgroundImage: cardBackground ? `url(${cardBackground})` : '',
+    }}
     onMouseLeave={onMouseLeave}
   >
     {title
