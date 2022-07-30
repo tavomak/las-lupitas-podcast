@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import emailjs from '@emailjs/browser';
-import useNotify from 'hooks/useNotify';
+import UseNotify from 'hooks/UseNotify';
 import Button from 'components/Atoms/Button';
 import ReCAPTCHA from 'react-google-recaptcha';
 import styles from './styles.module.scss';
@@ -10,13 +10,13 @@ const recaptchaKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as string;
 
 const FormContact = () => {
   const [loading, setLoading] = useState(false);
-  const recaptchaRef = useRef(null);
+  const recaptchaRef = useRef(null) as any;
   const [activeTarget, setActiveTarget] = useState({
     username: false,
     email: false,
     message: false,
   });
-  const form = useRef();
+  const form = useRef() as any;
   const {
     register,
     handleSubmit,
@@ -33,7 +33,6 @@ const FormContact = () => {
 
   const handleBlur = (e: React.FocusEvent<HTMLFormElement>) => {
     if (e.target.value === '') {
-      console.log(e.target.value);
       setActiveTarget((state) => ({
         ...state,
         [e.target.name]: false,
@@ -46,7 +45,8 @@ const FormContact = () => {
     recaptchaRef.current.execute();
   };
 
-  const onReCAPTCHAChange = async (captchaCode: string) => {
+  const onReCAPTCHAChange = async (captchaCode: any) => {
+    console.log(captchaCode);
     if (!captchaCode) {
       return;
     }
@@ -62,24 +62,24 @@ const FormContact = () => {
         emailjs.sendForm('service_6tucgh7', 'template_ex05dnc', form.current, 'MDfmR55yVZYpsAKKw')
           .then((result) => {
             setLoading(false);
-            // eslint-disable-next-line react-hooks/rules-of-hooks
-            useNotify('success', '¡Gracias! Por suscribirte en nuestra newsletter');
+            UseNotify('success', '¡Gracias! Por suscribirte en nuestra newsletter');
             console.log(result);
             reset();
           }, (error) => {
             setLoading(false);
             console.log(error);
-            // eslint-disable-next-line react-hooks/rules-of-hooks
-            useNotify('error', '¡Mensaje no enviado, por favor intentalo de nuevo!');
+            UseNotify('error', '¡Mensaje no enviado, por favor intentalo de nuevo!');
           });
       } else {
         const error = await response.json();
-        console.log(error);
         throw new Error(error.message);
       }
     } catch (error) {
-      // eslint-disable-next-line react-hooks/rules-of-hooks
-      useNotify('error', error.message);
+      if (error instanceof Error) {
+        UseNotify('error', error.message);
+      } else {
+        console.log('Unexpected error', error);
+      }
     } finally {
       recaptchaRef.current.reset();
     }
