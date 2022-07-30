@@ -63,7 +63,7 @@ const FormContact = () => {
           .then((result) => {
             setLoading(false);
             // eslint-disable-next-line react-hooks/rules-of-hooks
-            useNotify('success', 'Hemos recibido tu mensaje. Un ejecutivo se comunicará contigo brevemente.');
+            useNotify('success', '¡Gracias! Por suscribirte en nuestra newsletter');
             console.log(result);
             reset();
           }, (error) => {
@@ -128,7 +128,16 @@ const FormContact = () => {
               <input
                 type="email"
                 className={`${styles.formInput} ${errors.email ? styles.formInputError : ''} form-control mt-2`}
-                {...register('email', { required: true, maxLength: 20 })}
+                {...register(
+                  'email',
+                  {
+                    required: true,
+                    pattern: {
+                      value: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+                      message: 'invalid email address',
+                    },
+                  },
+                )}
               />
               {errors.email && (
                 <span className={styles.inputError}>
