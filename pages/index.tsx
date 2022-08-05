@@ -196,5 +196,6 @@ export const getStaticProps: GetStaticProps = async ({ preview = null }) => {
       preview,
       data: data.homePages[0],
     },
+    revalidate: 10,
   };
 };
