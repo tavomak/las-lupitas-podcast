@@ -1,8 +1,8 @@
 import React, { useState, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import emailjs from '@emailjs/browser';
-import UseNotify from 'hooks/UseNotify';
-import Button from 'components/Atoms/Button';
+import UseNotify from '@hooks/UseNotify';
+import Button from '@components/Atoms/Button';
 import ReCAPTCHA from 'react-google-recaptcha';
 import styles from './styles.module.scss';
 

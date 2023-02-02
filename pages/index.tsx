@@ -4,7 +4,7 @@ import { getAllServicesForHome } from 'lib';
 import { ToastContainer } from 'react-toastify';
 import Head from 'next/head';
 import Image from 'next/image';
-import FormContact from 'components/Molecules/Forms/Contact';
+import FormContact from '@components/Molecules/Forms/Contact';
 import styles from 'styles/pages/Home.module.scss';
 import {
   FaSpotify,
@@ -196,6 +196,6 @@ export const getStaticProps: GetStaticProps = async ({ preview = null }) => {
       preview,
       data: data.homePages[0],
     },
-    revalidate: 10,
+    revalidate: 60,
   };
 };
