@@ -7,6 +7,10 @@ const nextConfig = {
       'localhost',
     ],
   },
+  experimental: {
+    workerThreads: false,
+    cpus: 1,
+  },
   // typescript: {
   //   ignoreBuildErrors: true,
   // },

@@ -105,7 +105,7 @@ const Home: NextPage<Props> = ({ data }) => {
             <div className="col-md-6 text-center">
               <ul className="d-flex justify-content-around fs-1 w-100 text-white rss-container mb-5">
                 <li className="rss-item">
-                  <a className={styles.rssLink} href="https://www.youtube.com/channel/UCiF_WDNay1fR9a2hKJ-gJKA" target="_blank" rel="noreferrer">
+                  <a className={styles.rssLink} href="https://open.spotify.com/show/3sDwgO1U69kH9IfqtnOxAW?si=07d2ee8249b142cf" target="_blank" rel="noreferrer">
                     <span className={styles.rssIcon}>
                       <span className={styles.rssIconImage}>
                         <FaSpotify />
