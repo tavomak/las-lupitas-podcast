@@ -1,9 +1,9 @@
 import React, { useState, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import emailjs from '@emailjs/browser';
+import ReCAPTCHA from 'react-google-recaptcha';
 import useNotify from '@hooks/useNotify';
 import Button from '@components/Atoms/Button';
-import ReCAPTCHA from 'react-google-recaptcha';
 import styles from './styles.module.scss';
 
 const recaptchaKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as string;
