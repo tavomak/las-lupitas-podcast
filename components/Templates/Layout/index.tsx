@@ -21,7 +21,7 @@ const Layout = ({
   return (
     <>
       <Head>
-        <title>{`${title} | CFC Podcast de las Lupitas`}</title>
+        <title>{`${title} | Podcast de las Lupitas`}</title>
         <meta charSet="UTF-8" />
         <meta
           name="description"
