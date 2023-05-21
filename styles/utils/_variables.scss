@@ -1,12 +1,12 @@
 // Font
-$primary-font: 'Open Sans', sans-serif;
+$primary-font: 'Inter', sans-serif;
 $font-regular: 400;
 $font-bold: 600;
 $font-black: 800;
 
 // Colors
 $palette: (
-    ligth-grey: #F6F6F6,
+    light-grey: #F6F6F6,
     medium-grey: #59565a,
     dark-grey: #232323,
 
@@ -16,7 +16,7 @@ $palette: (
     ascent-color: #5D1BFE,
 );
 
-$ligth-grey: map-get($palette,ligth-grey);
+$light-grey: map-get($palette,light-grey);
 $medium-grey: map-get($palette,medium-grey);
 $dark-grey: map-get($palette,dark-grey);
 $primary-color: map-get($palette,primary-color);

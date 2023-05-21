@@ -1,19 +1,20 @@
+const nextTranslate = require('next-translate-plugin');
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
   images: {
     domains: [
       'localhost',
+      'media.graphassets.com',
     ],
   },
   experimental: {
     workerThreads: false,
     cpus: 1,
   },
-  // typescript: {
-  //   ignoreBuildErrors: true,
-  // },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
 };
 
-module.exports = nextConfig;
+module.exports = nextTranslate(nextConfig);

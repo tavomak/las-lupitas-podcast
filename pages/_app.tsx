@@ -20,9 +20,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   useEffect(() => {
     const handleStart = (url: string) => (url !== router.asPath) && setLoading(true);
-    const handleComplete = (url: string) => {
-      (url === router.asPath) && setTimeout(() => { setLoading(false); }, 5000);
-    };
+    const handleComplete = (url: string) => (url === router.asPath) && setLoading(false);
 
     router.events.on('routeChangeStart', handleStart);
     router.events.on('routeChangeComplete', handleComplete);
@@ -35,7 +33,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     };
   }, [router]);
 
-  if (loading) return <Loading />;
+  // if (loading) return <Loading />;
   return <Component {...pageProps} />;
 }
 

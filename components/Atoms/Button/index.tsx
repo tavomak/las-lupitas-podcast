@@ -1,15 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 type Props = {
-  loading: boolean,
+  loading?: boolean,
   text: string,
-  className: string,
-  submit: boolean,
-  onClick: React.MouseEventHandler<HTMLButtonElement>,
-  imgPrev: React.ReactNode,
-  imgNext: React.ReactNode,
-  disabled: boolean | undefined,
+  className?: string,
+  submit?: boolean,
+  onClick?: React.MouseEventHandler<HTMLButtonElement>,
+  imgPrev?: React.ReactNode,
+  imgNext?: React.ReactNode,
+  disabled?: boolean | undefined,
 }
 
 const ButtonSubmit = ({
@@ -40,26 +39,5 @@ const ButtonSubmit = ({
     )}
   </button>
 );
-
-ButtonSubmit.defaultProps = {
-  loading: false,
-  className: '',
-  submit: false,
-  onClick: () => {},
-  imgPrev: null,
-  imgNext: null,
-  disabled: null,
-};
-
-ButtonSubmit.propTypes = {
-  text: PropTypes.string.isRequired,
-  loading: PropTypes.bool,
-  className: PropTypes.string,
-  submit: PropTypes.bool,
-  onClick: PropTypes.func,
-  imgPrev: PropTypes.node,
-  imgNext: PropTypes.node,
-  disabled: PropTypes.bool,
-};
 
 export default ButtonSubmit;

@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import emailjs from '@emailjs/browser';
-import UseNotify from '@hooks/UseNotify';
+import useNotify from '@hooks/useNotify';
 import Button from '@components/Atoms/Button';
 import ReCAPTCHA from 'react-google-recaptcha';
 import styles from './styles.module.scss';
@@ -10,7 +10,7 @@ const recaptchaKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as string;
 
 const FormContact = () => {
   const [loading, setLoading] = useState(false);
-  const recaptchaRef = useRef(null) as any;
+  const reCaptchaRef = useRef(null) as any;
   const [activeTarget, setActiveTarget] = useState({
     username: false,
     email: false,
@@ -23,6 +23,8 @@ const FormContact = () => {
     formState: { errors },
     reset,
   } = useForm();
+
+  const [notification] = useNotify();
 
   const handleFocus = (e: React.FocusEvent<HTMLFormElement>) => {
     setActiveTarget((state) => ({
@@ -42,11 +44,10 @@ const FormContact = () => {
 
   const handleClick = () => {
     setLoading(true);
-    recaptchaRef.current.execute();
+    reCaptchaRef.current.execute();
   };
 
   const onReCAPTCHAChange = async (captchaCode: any) => {
-    console.log(captchaCode);
     if (!captchaCode) {
       return;
     }
@@ -62,13 +63,13 @@ const FormContact = () => {
         emailjs.sendForm('service_6tucgh7', 'template_ex05dnc', form.current, 'MDfmR55yVZYpsAKKw')
           .then((result) => {
             setLoading(false);
-            UseNotify('success', '¡Gracias! Por suscribirte en nuestra newsletter');
+            notification('success', '¡Gracias! Por suscribirte en nuestra newsletter');
             console.log(result);
             reset();
           }, (error) => {
             setLoading(false);
             console.log(error);
-            UseNotify('error', '¡Mensaje no enviado, por favor intentalo de nuevo!');
+            notification('error', '¡Mensaje no enviado, por favor intentalo de nuevo!');
           });
       } else {
         const error = await response.json();
@@ -76,12 +77,12 @@ const FormContact = () => {
       }
     } catch (error) {
       if (error instanceof Error) {
-        UseNotify('error', error.message);
+        notification('error', error.message);
       } else {
         console.log('Unexpected error', error);
       }
     } finally {
-      recaptchaRef.current.reset();
+      reCaptchaRef.current.reset();
     }
   };
 
@@ -94,13 +95,13 @@ const FormContact = () => {
       onBlur={(e) => handleBlur(e)}
     >
       <ReCAPTCHA
-        ref={recaptchaRef}
+        ref={reCaptchaRef}
         size="invisible"
         sitekey={recaptchaKey}
         onChange={onReCAPTCHAChange}
       />
       <div className="row">
-        <div className="col">
+        <div className="col-md">
           <div className="form-group">
             <label htmlFor="username" className="form-label w-100 position-relative">
               <span className={`${styles.formLabel} ${activeTarget.username ? styles.activeLabel : ''}`}>
@@ -119,7 +120,7 @@ const FormContact = () => {
             </label>
           </div>
         </div>
-        <div className="col">
+        <div className="col-md">
           <div className="form-group">
             <label htmlFor="email" className="form-label w-100 position-relative">
               <span className={`${styles.formLabel} ${activeTarget.email ? styles.activeLabel : ''}`}>
@@ -161,12 +162,14 @@ const FormContact = () => {
         </label>
       </div>
       <div className="form-group">
-        <Button
-          className="btn btn-primary mt-4 text-uppercase py-2 px-4"
-          text="Enviar"
-          loading={loading}
-          submit
-        />
+        <p className="text-right">
+          <Button
+            className="btn btn-primary mt-4 text-uppercase py-2 px-4"
+            text="Enviar"
+            loading={loading}
+            submit
+          />
+        </p>
       </div>
     </form>
   );

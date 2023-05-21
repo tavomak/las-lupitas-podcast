@@ -1,13 +1,18 @@
+import { NextApiRequest, NextApiResponse } from 'next';
 import fetch from 'node-fetch';
 
-export default async function handler(req, res) {
+interface CaptchaValidationResponse {
+  success: boolean;
+}
+
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const { body, method } = req;
   const { captcha } = body;
 
   if (method === 'POST') {
     if (!captcha) {
       return res.status(422).json({
-        message: 'Unproccesable request, please provide the required fields',
+        message: 'Unprocessable request, please provide the required fields',
       });
     }
 
@@ -21,13 +26,14 @@ export default async function handler(req, res) {
           method: 'POST',
         },
       );
-      const captchaValidation = await response.json();
+      const captchaValidation: CaptchaValidationResponse = await response
+        .json() as CaptchaValidationResponse;
       if (captchaValidation.success) {
         return res.status(200).send('OK');
       }
 
       return res.status(422).json({
-        message: 'Unproccesable request, Invalid captcha code',
+        message: 'Unprocessable request, Invalid captcha code',
       });
     } catch (error) {
       console.log(error);
