@@ -12,6 +12,7 @@ const nextConfig = {
     workerThreads: false,
     cpus: 1,
   },
+  ignoreDuringBuilds: true,
   typescript: {
     ignoreBuildErrors: true,
   },

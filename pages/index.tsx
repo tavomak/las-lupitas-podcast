@@ -103,7 +103,7 @@ const Home: NextPage<Props> = ({ data, posts }) => {
         </div>
         <div className="row">
           {episodes.length > 0 && episodes.map((item: any) => (
-            <div className="col" key={item.id}>
+            <div className="col-md-4" key={item.id}>
               <EpisodeCard
                 slug={item.slug}
                 title={item.title}

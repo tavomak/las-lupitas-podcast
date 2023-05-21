@@ -61,7 +61,7 @@ const About: NextPage<Props> = ({ data, posts }) => {
           <div className="row d-flex align-items-center">
             <div className="col-md-6 align-self-center">
               <div className="px-md-5 pb-5 mb-lg-0 pb-lg-0">
-                <Image src="/hero2-home.png" alt="girl" width={700} height={841} objectFit="contain" layout="responsive" />
+                <Image src="/hero2-about.png" alt="girl" width={700} height={841} objectFit="contain" layout="responsive" />
               </div>
             </div>
             <div className="col-md-6">
@@ -82,7 +82,7 @@ const About: NextPage<Props> = ({ data, posts }) => {
         </div>
         <div className="row">
           {episodes.length > 0 && episodes.map((item: any) => (
-            <div className="col" key={item.id}>
+            <div className="col-md-4" key={item.id}>
               <EpisodeCard
                 slug={item.slug}
                 title={item.title}
