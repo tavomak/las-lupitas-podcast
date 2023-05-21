@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import emailjs from '@emailjs/browser';
 import ReCAPTCHA from 'react-google-recaptcha';
 import Button from '@components/Atoms/Button';
-import useNotify from '@hooks/useNotify';
+import useNotify from '../../../../hooks/useNotify';
 import styles from './styles.module.scss';
 
 const recaptchaKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as string;
