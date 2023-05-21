@@ -17,40 +17,44 @@ const Episode: NextPage<Props> = ({ episode, content }) => (
     title=""
     description=""
   >
-    <section className="container py-5">
-      <div className="row justify-content-center py-5">
-        <div className="col-8">
-          <h1 className="text-uppercase text-center fs-2">{episode.title}</h1>
-        </div>
-      </div>
-      <div className="row">
-        <div className="col-md-6">
-          <EpisodeImage
-            image={{ url: episode.image.url, name: episode.title }}
-            episodeNumber={episode.episodeNumber}
-          />
-          <NetworkIcons
-            theme="dark"
-            ytSlug={episode.youtubeId}
-            spSlug={episode.spotifyId}
-            isShow
-          />
-        </div>
-        <div className="col-md-6">
-          <div
-            dangerouslySetInnerHTML={{ __html: content }}
-          />
-        </div>
-      </div>
-    </section>
+    {episode && episode.title && (
+      <>
+        <section className="container py-5">
+          <div className="row justify-content-center py-5">
+            <div className="col-8">
+              <h1 className="text-uppercase text-center fs-2">{episode.title}</h1>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-6">
+              <EpisodeImage
+                image={{ url: episode.image.url, name: episode.title }}
+                episodeNumber={episode.episodeNumber}
+              />
+              <NetworkIcons
+                theme="dark"
+                ytSlug={episode.youtubeId}
+                spSlug={episode.spotifyId}
+                isShow
+              />
+            </div>
+            <div className="col-md-6">
+              <div
+                dangerouslySetInnerHTML={{ __html: content }}
+              />
+            </div>
+          </div>
+        </section>
 
-    <section className="container py-5">
-      <div className="row justify-content-center py-5">
-        <div className="col-md-6">
-          <Subscribe />
-        </div>
-      </div>
-    </section>
+        <section className="container py-5">
+          <div className="row justify-content-center py-5">
+            <div className="col-md-6">
+              <Subscribe />
+            </div>
+          </div>
+        </section>
+      </>
+    )}
 
   </Layout>
 );
