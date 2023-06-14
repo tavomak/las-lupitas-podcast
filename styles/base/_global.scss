@@ -83,3 +83,29 @@ strong, .font-bold {
 .f-800 {
   font-weight: $font-black;
 }
+
+.grecaptcha-badge {
+  transform: scale(.3);
+}
+
+.bubble {
+  background: url('/bubble.png'), url('/bubble2.png');
+  background-position: left center, right center;
+  background-size: contain;
+}
+
+.card {
+  border: none;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 12px;
+  &-header {
+    border: none;
+    padding: 10px;
+  }
+}
+
+main {
+  min-height: 50vh;
+}

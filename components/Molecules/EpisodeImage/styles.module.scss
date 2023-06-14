@@ -1,0 +1,11 @@
+@import "styles/utils/mixins";
+@import "styles/utils/variables";
+@import "styles/utils/media";
+
+.episodeNumber {
+  position: absolute;
+  bottom: 0;
+  padding: 5px;
+  background: $secondary-color;
+  color: $white;
+}

@@ -1,0 +1,57 @@
+@import "styles/utils/mixins";
+@import "styles/utils/variables";
+.form {
+  &Input {
+    border-color: $medium-grey;
+    height: 40px ;
+    position: relative;
+    background: none;
+    border-radius: 50rem;
+
+    &:focus {
+      border-color: none;
+      box-shadow: 0 0 0 0.25rem lighten($ascent-color, 25%);
+    }
+
+    &Error {
+      border: 1px solid #FD2626 !important;
+    }
+    &SpanError {
+      color: #FD2626 !important;
+    }
+  }
+
+  &TextArea {
+    border-color: $medium-grey;
+    position: relative;
+    background: none;
+    &:focus {
+      border-color: none;
+      box-shadow: 0 0 0 0.25rem lighten($ascent-color, 25%);
+    }
+  }
+
+  &Label {
+    position: absolute;
+    transition: .1s all ease-in-out;
+    transform: translateY(15px);
+    padding-left: 10px;
+    left: 0;
+  }
+}
+
+.formInputError.form-control:focus {
+  border: 1px solid #FD2626 !important;
+}
+
+.activeLabel {
+  transform: translateY(-20px);
+}
+
+.inputError {
+  font-size: 10px;
+  position: absolute;
+  left: 0;
+  top: 50px;
+  color: tomato;
+}

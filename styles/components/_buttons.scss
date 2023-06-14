@@ -1,14 +1,24 @@
 .btn {
     border: none;
     font-weight: $font-bold;
+    border-radius: 50rem;
+    color: $primary-color;
+
+    &-styleless {
+        border: none;
+        background: none;
+        padding: 0;
+        font-weight: 400;
+    }
 
     &-primary {
         border: 1px solid $secondary-color;
-        background: $primary-gradient;
+        background: $secondary-color;
         transition: all .1s ease-in-out;
+        color: $white;
         &:hover {
-            color: $primary-color;
-            background: $secondary-gradient;
+            border: 1px solid $white;
+            background: none;
             box-shadow: 0 0.5rem 1.5rem rgb(98 52 130 / 20%) !important;
             transform: translateY(-2px);
         }
@@ -25,9 +35,10 @@
     }
 
     &-secondary{
-        border: 1px solid $secondary-color;
-        background: $secondary-color;
+        border: 1px solid $white;
+        background: none;
         transition: all .1s ease-in-out;
+        color: $white;
         &:hover {
             color: $secondary-color;
             background: $white;
@@ -49,7 +60,7 @@
 
     &-complementary{
         border: 1px solid $white;
-        background: transparent !important;
+        background: $primary-color;
         color: $white;
         transition: all .1s ease-in-out;
         &:hover {
@@ -63,6 +74,7 @@
             outline: none;
             box-shadow: none;
             background: $white;
+            background: $primary-color;
         }
 
         &:disabled {
