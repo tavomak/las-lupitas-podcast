@@ -37,7 +37,7 @@ const Episodios: NextPage<Props> = ({ posts, categories }) => {
           <div className="col">
             <p className="text-uppercase fs-4">{t('nav_episodes_title')}</p>
           </div>
-          <div className="col">
+          <div className="col d-none">
             {categoriesList.length > 0 && (
               <select onChange={(e) => handleChange(e)}>
                 <option value="all">
@@ -54,7 +54,7 @@ const Episodios: NextPage<Props> = ({ posts, categories }) => {
         </div>
         <div className="row">
           {episodeList.length > 0 && episodeList.map((item: any) => (
-            <div className="col-md-4" key={item.id}>
+            <div className="col-md-4 mb-5" key={item.id}>
               <EpisodeCard
                 slug={item.slug}
                 title={item.title}
