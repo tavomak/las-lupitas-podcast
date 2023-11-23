@@ -2,5 +2,7 @@
   "nav_homepage_title": "Home",
   "nav_episodes_title": "Episodes",
   "nav_about_title": "About",
-  "nav_contact_title": "Contact"
+  "nav_contact_title": "Contact",
+  "btn_view_all_episodes": "View all"
+
 }

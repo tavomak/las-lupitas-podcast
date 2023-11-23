@@ -56,12 +56,12 @@ const Episodios: NextPage<Props> = ({ posts, categories }) => {
           {episodeList.length > 0 && episodeList.map((item: any) => (
             <div className="col-md-4 mb-5" key={item.id}>
               <EpisodeCard
-                slug={item.slug}
-                title={item.title}
-                description={item.description}
-                image={item.image}
-                audioDuration={item.audioDuration}
-                episodeNumber={item.episodeNumber}
+                slug={item?.slug}
+                title={item?.title}
+                description={item?.description}
+                image={item?.image}
+                audioDuration={item?.audioDuration}
+                episodeNumber={item?.episodeNumber}
               />
             </div>
           ))}

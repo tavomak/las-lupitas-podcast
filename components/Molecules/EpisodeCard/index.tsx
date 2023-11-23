@@ -26,12 +26,12 @@ const EpisodeCard = ({
     router.push(`/episodios/${slug}`);
   };
   return (
-    <div className={`${className} mt-4 mt-md-0`}>
+    <div className={`${className || ''} mt-4 mt-md-0`} style={{ height: '100%' }}>
       <article className="card shadow" style={{ height: '100%' }}>
         <div className="card-header">
           <a href="!#" onClick={(e) => handleClick(e)}>
             <EpisodeImage
-              image={{ url: image.url, name: image.name }}
+              image={{ url: image?.url || '/hero-about.png', name: image?.name }}
               episodeNumber={episodeNumber}
             />
           </a>
