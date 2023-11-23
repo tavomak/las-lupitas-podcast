@@ -11,15 +11,17 @@ const FourOhFour = () => (
       <div className="col-lg-5">
         <div className="text-center">
           <Image
-            src="/404.png"
+            src="/hero-home.png"
             alt="Las Lupitas"
-            width={500}
-            height={500}
+            width={699}
+            height={617}
+            layout="responsive"
           />
+          <h1 className="text-uppercase mt-5 fw-bolder">Ooops, page no found!</h1>
         </div>
         <div className="mt-5 text-center">
           <Link href="/">
-            <a href="inicio" className="btn btn-secondary btn-sm bk--btn__primary shadow px-5 py-2">
+            <a href="inicio" className="btn btn-primary shadow px-5 py-2">
               Volver al sitio
             </a>
           </Link>

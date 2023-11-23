@@ -71,16 +71,6 @@ const Footer = () => {
                 {t('site_email')}
               </small>
             </p>
-            <p className="mb-0">
-              <small>
-                {t('site_address')}
-              </small>
-            </p>
-            <p className="mb-0">
-              <small>
-                {t('site_phone')}
-              </small>
-            </p>
           </div>
         </div>
         <hr />

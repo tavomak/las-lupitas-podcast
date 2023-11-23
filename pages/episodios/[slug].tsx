@@ -5,6 +5,7 @@ import Layout from '@components/Templates/Layout';
 import EpisodeImage from '@components/Molecules/EpisodeImage';
 import Subscribe from '@components/Molecules/Subscribe';
 import NetworkIcons from '@components/Molecules/NetworkIcons';
+import NetworkButtons from '@components/Molecules/NetworkButtons';
 
 interface Props {
   episode: any,
@@ -41,6 +42,11 @@ const Episode: NextPage<Props> = ({ episode, content }) => (
             <div className="col-md-6">
               <div
                 dangerouslySetInnerHTML={{ __html: content }}
+              />
+              <NetworkButtons
+                ytSlug={episode.youtubeId}
+                spSlug={episode.spotifyId}
+                isShow
               />
             </div>
           </div>

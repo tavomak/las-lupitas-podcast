@@ -77,7 +77,7 @@ export async function getAllServicesForHome(preview?: boolean) {
 }
 
 export async function getAllEpisodesAndCategories(
-  preview: boolean,
+  preview?: boolean,
 ): Promise<PostAndMorePostsResult> {
   const data = await fetchAPI(
     `
@@ -117,7 +117,7 @@ export async function getLastEpisodes(): Promise<PostAndMorePostsResult> {
   const data = await fetchAPI(
     `
     query LastEpisodes {
-      episodes(first: 3) {
+      episodes(first: 3, orderBy: createdAt_DESC) {
         title
         slug
         image {

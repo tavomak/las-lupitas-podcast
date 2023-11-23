@@ -1,5 +1,7 @@
 import type { NextPage } from 'next';
 import { GetStaticProps } from 'next';
+import { useRouter } from 'next/router';
+
 import { getAllServicesForHome, getLastEpisodes } from 'lib';
 import Image from 'next/image';
 import useTranslation from 'next-translate/useTranslation';
@@ -8,6 +10,7 @@ import Subscribe from '@components/Molecules/Subscribe';
 import EpisodeCard from '@components/Molecules/EpisodeCard';
 import NetworkIcons from '@components/Molecules/NetworkIcons';
 import styles from 'styles/pages/Home.module.scss';
+import ButtonSubmit from '@components/Atoms/Button';
 import { socialMediaInfo } from '@utils/constants';
 
 interface Props {
@@ -21,6 +24,7 @@ interface Props {
 }
 
 const Home: NextPage<Props> = ({ data, posts }) => {
+  const router = useRouter();
   const { episodes } = posts;
   const {
     bloqueDeTexto,
@@ -114,6 +118,17 @@ const Home: NextPage<Props> = ({ data, posts }) => {
               />
             </div>
           ))}
+        </div>
+        <div className="row justify-content-center">
+          <div className="col-md-6">
+            <div className="mt-5 text-center">
+              <ButtonSubmit
+                text={t('btn_view_all_episodes')}
+                className="btn btn-complementary mt-4 text-uppercase py-2 px-4"
+                onClick={() => router.push('/episodios')}
+              />
+            </div>
+          </div>
         </div>
       </section>
 
