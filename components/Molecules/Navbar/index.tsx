@@ -53,8 +53,8 @@ const Navbar = () => {
               <Image
                 src="/logo-ll.svg"
                 alt={siteName}
-                width={scrollTop > 150 ? 150 : 250}
-                height={scrollTop > 150 ? 60 : 120}
+                width={scrollTop > 150 ? 80 : 120}
+                height={scrollTop > 150 ? 50 : 70}
               />
             </a>
           </Link>
