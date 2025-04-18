@@ -82,7 +82,7 @@ export async function getAllEpisodesAndCategories(
   const data = await fetchAPI(
     `
     query Episodes {
-      episodes {
+      episodes(orderBy: createdAt_DESC) {
         title
         slug
         image {

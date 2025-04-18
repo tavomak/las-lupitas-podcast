@@ -6,6 +6,7 @@ const nextConfig = {
     domains: [
       'localhost',
       'media.graphassets.com',
+      'us-east-1.graphassets.com',
     ],
   },
   experimental: {

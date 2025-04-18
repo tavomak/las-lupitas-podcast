@@ -38,9 +38,11 @@ const EpisodeCard = ({
         </div>
         <div className="card-body d-flex flex-column">
           {title}
-          <div className="py-3">
-            {description.slice(0, 120).concat(' ...')}
-          </div>
+          {description && (
+            <div className="py-3">
+              {description.slice(0, 120).concat(' ...')}
+            </div>
+          )}
           <div className="mt-auto d-flex justify-content-between">
             <Button
               className="align-self-start btn btn-styleless"
