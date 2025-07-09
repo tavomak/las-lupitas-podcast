@@ -20,6 +20,7 @@ const NetworkButtons = ({
   return (
     <div className="mt-5">
       <ul className="d-lg-flex">
+        {spSlug && (
         <li className="me-2">
           <a
             href={`${isShow ? `https://open.spotify.com/episode/${spSlug}` : spSlug}`}
@@ -32,6 +33,8 @@ const NetworkButtons = ({
             {t('btn_view_on_spotify')}
           </a>
         </li>
+        )}
+        {ytSlug && (
         <li>
           <a
             href={`${isShow ? `https://www.youtube.com/watch?v=${ytSlug}` : ytSlug}`}
@@ -44,6 +47,7 @@ const NetworkButtons = ({
             {t('btn_view_on_youtube')}
           </a>
         </li>
+        )}
       </ul>
     </div>
   );

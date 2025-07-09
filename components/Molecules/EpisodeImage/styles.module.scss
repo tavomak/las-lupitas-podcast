@@ -9,3 +9,14 @@
   background: $secondary-color;
   color: $white;
 }
+
+.episodePart {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 5px;
+  background: $primary-color;
+  color: $white;
+  font-size: 12px;
+  font-weight: $font-bold;
+}

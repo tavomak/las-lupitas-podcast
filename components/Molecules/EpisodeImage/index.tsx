@@ -7,9 +7,10 @@ interface Props {
     name: string,
   },
   episodeNumber?: string,
+  episodePart?: string,
 }
 
-const EpisodeImage = ({ image, episodeNumber }: Props) => (
+const EpisodeImage = ({ image, episodeNumber, episodePart }: Props) => (
   <div className="position-relative">
     <Image src={`${image.url}`} alt={image.name} width={16} height={9} layout="responsive" />
     {episodeNumber && (
@@ -17,6 +18,11 @@ const EpisodeImage = ({ image, episodeNumber }: Props) => (
       {'EP. '}
       {episodeNumber}
     </span>
+    )}
+    {episodePart && (
+      <span className={styles.episodePart}>
+        {`Parte ${episodePart}`}
+      </span>
     )}
   </div>
 );

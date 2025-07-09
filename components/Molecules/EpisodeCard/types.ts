@@ -9,4 +9,5 @@ export interface Props {
   },
   audioDuration?: string,
   episodeNumber?: string,
+  episodePart?: string,
 }

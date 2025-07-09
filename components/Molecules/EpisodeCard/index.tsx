@@ -16,6 +16,7 @@ const EpisodeCard = ({
   image,
   audioDuration,
   episodeNumber,
+  episodePart,
 }: Props) => {
   const router = useRouter();
 
@@ -33,11 +34,12 @@ const EpisodeCard = ({
             <EpisodeImage
               image={{ url: image?.url || '/hero-about.png', name: image?.name }}
               episodeNumber={episodeNumber}
+              episodePart={episodePart}
             />
           </a>
         </div>
         <div className="card-body d-flex flex-column">
-          {title}
+          {`${title} ${episodePart ? `- Parte ${episodePart}` : ''}`}
           {description && (
             <div className="py-3">
               {description.slice(0, 120).concat(' ...')}

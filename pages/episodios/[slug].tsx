@@ -79,6 +79,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   const data = await getEpisodeBySlug(params.slug);
 
+  console.log({ data });
+
   if (data.episode.length < 1) {
     return {
       redirect: {

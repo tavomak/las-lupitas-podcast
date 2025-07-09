@@ -35,6 +35,10 @@ export async function getEpisodeBySlug(slug: string[] | string | undefined) {
           url
         }
         episodeNumber
+        episodeParent {
+          episodePart
+        }
+        episodePart
         youtubeId
         spotifyId
         resources {
@@ -95,6 +99,10 @@ export async function getAllEpisodesAndCategories(
         createdAt
         description
         episodeNumber
+        episodeParent {
+          episodePart
+        }
+        episodePart
         id
         audioDuration
       }

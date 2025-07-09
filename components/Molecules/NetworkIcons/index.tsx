@@ -22,6 +22,7 @@ const NetworkIcons = ({
         {t('cta_listen')}
       </p>
       <ul className="d-lg-flex">
+        {spSlug && (
         <li className="me-2">
           <a
             href={`${isShow ? `https://open.spotify.com/episode/${spSlug}` : spSlug}`}
@@ -30,6 +31,8 @@ const NetworkIcons = ({
             <Image src={`/spotify-logo-${theme}.png`} width={100} height={40} objectFit="contain" alt="spotify" />
           </a>
         </li>
+        )}
+        {ytSlug && (
         <li>
           <a
             href={`${isShow ? `https://www.youtube.com/watch?v=${ytSlug}` : ytSlug}`}
@@ -38,6 +41,7 @@ const NetworkIcons = ({
             <Image src={`/youtube-logo-${theme}.png`} width={100} height={40} objectFit="contain" alt="spotify" />
           </a>
         </li>
+        )}
       </ul>
     </div>
   );

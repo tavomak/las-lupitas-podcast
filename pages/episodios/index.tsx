@@ -15,6 +15,7 @@ const Episodios: NextPage<Props> = ({ posts, categories }) => {
   const { t } = useTranslation('common');
   const [episodeList, setEpisodeList] = useState(posts);
   const categoriesList = categories.map((item: {name: string}) => item.name);
+  console.log({ posts });
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const { value } = e.target;
@@ -62,6 +63,7 @@ const Episodios: NextPage<Props> = ({ posts, categories }) => {
                 image={item?.image}
                 audioDuration={item?.audioDuration}
                 episodeNumber={item?.episodeNumber}
+                episodePart={item?.episodePart}
               />
             </div>
           ))}
