@@ -1,10 +1,10 @@
-import React, { useState, useRef } from 'react';
-import { useForm } from 'react-hook-form';
-import emailjs from '@emailjs/browser';
-import ReCAPTCHA from 'react-google-recaptcha';
-import useNotify from '@hooks/useNotify';
-import Button from '@components/Atoms/Button';
-import styles from './styles.module.scss';
+import React, { useState, useRef } from "react";
+import { useForm } from "react-hook-form";
+import emailjs from "@emailjs/browser";
+import ReCAPTCHA from "react-google-recaptcha";
+import useNotify from "@/hooks/useNotify";
+import Button from "@/components/Atoms/Button";
+import styles from "./styles.module.scss";
 
 const recaptchaKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as string;
 
@@ -34,7 +34,7 @@ const FormContact = () => {
   };
 
   const handleBlur = (e: React.FocusEvent<HTMLFormElement>) => {
-    if (e.target.value === '') {
+    if (e.target.value === "") {
       setActiveTarget((state) => ({
         ...state,
         [e.target.name]: false,
@@ -52,34 +52,49 @@ const FormContact = () => {
       return;
     }
     try {
-      const response = await fetch('/api/register', {
-        method: 'POST',
+      const response = await fetch("/api/register", {
+        method: "POST",
         body: JSON.stringify({ captcha: captchaCode }),
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
       });
       if (response.ok) {
-        emailjs.sendForm('service_6tucgh7', 'template_ex05dnc', form.current, 'MDfmR55yVZYpsAKKw')
-          .then((result) => {
-            setLoading(false);
-            notification('success', '¡Gracias! Por suscribirte en nuestra newsletter');
-            console.log(result);
-            reset();
-          }, (error) => {
-            setLoading(false);
-            console.log(error);
-            notification('error', '¡Mensaje no enviado, por favor intentalo de nuevo!');
-          });
+        emailjs
+          .sendForm(
+            "service_6tucgh7",
+            "template_ex05dnc",
+            form.current,
+            "MDfmR55yVZYpsAKKw",
+          )
+          .then(
+            (result) => {
+              setLoading(false);
+              notification(
+                "success",
+                "¡Gracias! Por suscribirte en nuestra newsletter",
+              );
+              console.log(result);
+              reset();
+            },
+            (error) => {
+              setLoading(false);
+              console.log(error);
+              notification(
+                "error",
+                "¡Mensaje no enviado, por favor intentalo de nuevo!",
+              );
+            },
+          );
       } else {
         const error = await response.json();
         throw new Error(error.message);
       }
     } catch (error) {
       if (error instanceof Error) {
-        notification('error', error.message);
+        notification("error", error.message);
       } else {
-        console.log('Unexpected error', error);
+        console.log("Unexpected error", error);
       }
     } finally {
       reCaptchaRef.current.reset();
@@ -103,14 +118,19 @@ const FormContact = () => {
       <div className="row">
         <div className="col-md">
           <div className="form-group">
-            <label htmlFor="username" className="form-label w-100 position-relative">
-              <span className={`${styles.formLabel} ${activeTarget.username ? styles.activeLabel : ''}`}>
+            <label
+              htmlFor="username"
+              className="form-label w-100 position-relative"
+            >
+              <span
+                className={`${styles.formLabel} ${activeTarget.username ? styles.activeLabel : ""}`}
+              >
                 Nombre
               </span>
               <input
                 type="text"
-                className={`${styles.formInput} ${errors.username ? styles.formInputError : ''} form-control mt-2`}
-                {...register('username', { required: true, maxLength: 20 })}
+                className={`${styles.formInput} ${errors.username ? styles.formInputError : ""} form-control mt-2`}
+                {...register("username", { required: true, maxLength: 20 })}
               />
               {errors.username && (
                 <span className={styles.inputError}>
@@ -122,23 +142,26 @@ const FormContact = () => {
         </div>
         <div className="col-md">
           <div className="form-group">
-            <label htmlFor="email" className="form-label w-100 position-relative">
-              <span className={`${styles.formLabel} ${activeTarget.email ? styles.activeLabel : ''}`}>
+            <label
+              htmlFor="email"
+              className="form-label w-100 position-relative"
+            >
+              <span
+                className={`${styles.formLabel} ${activeTarget.email ? styles.activeLabel : ""}`}
+              >
                 Email
               </span>
               <input
                 type="email"
-                className={`${styles.formInput} ${errors.email ? styles.formInputError : ''} form-control mt-2`}
-                {...register(
-                  'email',
-                  {
-                    required: true,
-                    pattern: {
-                      value: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
-                      message: 'invalid email address',
-                    },
+                className={`${styles.formInput} ${errors.email ? styles.formInputError : ""} form-control mt-2`}
+                {...register("email", {
+                  required: true,
+                  pattern: {
+                    value:
+                      /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+                    message: "invalid email address",
                   },
-                )}
+                })}
               />
               {errors.email && (
                 <span className={styles.inputError}>
@@ -151,13 +174,15 @@ const FormContact = () => {
       </div>
       <div className="form-group">
         <label htmlFor="message" className="form-label w-100 position-relative">
-          <span className={`${styles.formLabel} ${activeTarget.message ? styles.activeLabel : ''}`}>
+          <span
+            className={`${styles.formLabel} ${activeTarget.message ? styles.activeLabel : ""}`}
+          >
             Mensaje
           </span>
           <textarea
             className={`${styles.formTextArea} form-control mt-2`}
             rows={4}
-            {...register('message')}
+            {...register("message")}
           />
         </label>
       </div>

@@ -4,11 +4,7 @@
     "es2021": true,
     "jest": true
   },
-  "extends": [
-    "airbnb",
-    "plugin:react/recommended",
-    "next/core-web-vitals"
-  ],
+  "extends": ["airbnb", "plugin:react/recommended", "next/core-web-vitals"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
@@ -17,25 +13,28 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": [
-    "react",
-    "@typescript-eslint"
-  ],
-  // "react/jsx-indent": ["error", 4],
+  "plugins": ["react", "@typescript-eslint"],
   "rules": {
     "react/prop-types": "off",
     "react/require-default-props": "off",
-    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
     "react/react-in-jsx-scope": "off",
     "react/jsx-props-no-spreading": "off",
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", "tsx"] }],
+    "react/jsx-filename-extension": [
+      1,
+      { "extensions": [".js", ".jsx", "tsx"] }
+    ],
     "no-console": "off",
     "no-underscore-dangle": "off",
     "no-use-before-define": "off",
     "react/function-component-definition": [
       2,
       {
-        "namedComponents": ["function-declaration", "function-expression", "arrow-function"]
+        "namedComponents": [
+          "function-declaration",
+          "function-expression",
+          "arrow-function"
+        ]
       }
     ],
     "import/extensions": [
@@ -47,6 +46,6 @@
         "ts": "never",
         "tsx": "never"
       }
-   ]
+    ]
   }
 }

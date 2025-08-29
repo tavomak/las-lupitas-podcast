@@ -1,7 +1,7 @@
 import useTranslation from 'next-translate/useTranslation';
-import Layout from '@components/Templates/Layout';
-import Subscribe from '@components/Molecules/Subscribe';
-import Contact from '@components/Molecules/Forms/Contact';
+import Layout from '@/components/Templates/Layout';
+import Subscribe from '@/components/Molecules/Subscribe';
+import Contact from '@/components/Molecules/Forms/Contact';
 import { socialMediaInfo } from 'utils';
 import { FaPhoneAlt, FaMapMarkerAlt, FaEnvelope } from 'react-icons/fa';
 

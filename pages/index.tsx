@@ -5,13 +5,13 @@ import { useRouter } from 'next/router';
 import { getAllServicesForHome, getLastEpisodes } from 'lib';
 import Image from 'next/image';
 import useTranslation from 'next-translate/useTranslation';
-import Layout from '@components/Templates/Layout';
-import Subscribe from '@components/Molecules/Subscribe';
-import EpisodeCard from '@components/Molecules/EpisodeCard';
-import NetworkIcons from '@components/Molecules/NetworkIcons';
+import Layout from '@/components/Templates/Layout';
+import Subscribe from '@/components/Molecules/Subscribe';
+import EpisodeCard from '@/components/Molecules/EpisodeCard';
+import NetworkIcons from '@/components/Molecules/NetworkIcons';
 import styles from 'styles/pages/Home.module.scss';
-import ButtonSubmit from '@components/Atoms/Button';
-import { socialMediaInfo } from '@utils/constants';
+import ButtonSubmit from '@/components/Atoms/Button';
+import { socialMediaInfo } from '@/utils/constants';
 
 interface Props {
   data: {

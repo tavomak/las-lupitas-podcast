@@ -3,8 +3,8 @@ import type { NextPage } from 'next';
 import { GetStaticProps } from 'next';
 import { getAllEpisodesAndCategories } from 'lib';
 import useTranslation from 'next-translate/useTranslation';
-import Layout from '@components/Templates/Layout';
-import EpisodeCard from '@components/Molecules/EpisodeCard';
+import Layout from '@/components/Templates/Layout';
+import EpisodeCard from '@/components/Molecules/EpisodeCard';
 
 interface Props {
   posts: any,

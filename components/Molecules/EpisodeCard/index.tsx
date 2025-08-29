@@ -4,8 +4,8 @@ import {
   FaSpotify,
   FaYoutube,
 } from 'react-icons/fa';
-import Button from '@components/Atoms/Button';
-import EpisodeImage from '@components/Molecules/EpisodeImage';
+import Button from '@/components/Atoms/Button';
+import EpisodeImage from '@/components/Molecules/EpisodeImage';
 import { Props } from './types';
 
 const EpisodeCard = ({
