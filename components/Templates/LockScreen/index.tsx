@@ -4,15 +4,10 @@ import styles from './styles.module.scss';
 
 type Props = {
   loading: boolean;
-}
+};
 
 const LockScreen = ({ loading }: Props) => (
-  <CSSTransition
-    in={!loading}
-    timeout={300}
-    classNames="out-animation"
-    unmountOnExit
-  >
+  <CSSTransition in={!loading} timeout={300} classNames='out-animation' unmountOnExit>
     <div className={styles.wrapper}>index</div>
   </CSSTransition>
 );

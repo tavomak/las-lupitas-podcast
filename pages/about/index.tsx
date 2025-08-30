@@ -12,98 +12,92 @@ import styles from 'styles/pages/About.module.scss';
 
 interface Props {
   data: {
-    bloqueDeTexto: string,
-    heroPrimeraLinea: string,
-    heroSegundaLinea: string,
-    heroTerceraLinea: string,
-  },
-  posts: any
+    bloqueDeTexto: string;
+    heroPrimeraLinea: string;
+    heroSegundaLinea: string;
+    heroTerceraLinea: string;
+  };
+  posts: any;
 }
 
 const About: NextPage<Props> = ({ data, posts }) => {
   const { episodes } = posts;
-  const {
-    bloqueDeTexto,
-    heroPrimeraLinea,
-    heroSegundaLinea,
-    heroTerceraLinea,
-  } = data;
+  const { bloqueDeTexto, heroPrimeraLinea, heroSegundaLinea, heroTerceraLinea } = data;
   const { t } = useTranslation('common');
   return (
-    <Layout
-      description=""
-      title=""
-    >
+    <Layout description='' title=''>
       <section className={styles.heading}>
-        <article className="container">
-          <div className="row">
-            <div className="col-md-6 text-white py-5">
-              <p className="text-uppercase">{`Andreína Fuentes - ${t('site_subtitle')}`}</p>
-              <p className="fs-1 fw-bolder">{heroPrimeraLinea}</p>
-              <p className="fs-4">{heroSegundaLinea}</p>
-              <p>
-                {heroTerceraLinea}
-              </p>
+        <article className='container'>
+          <div className='row'>
+            <div className='col-md-6 text-white py-5'>
+              <p className='text-uppercase'>{`Andreína Fuentes - ${t('site_subtitle')}`}</p>
+              <p className='fs-1 fw-bolder'>{heroPrimeraLinea}</p>
+              <p className='fs-4'>{heroSegundaLinea}</p>
+              <p>{heroTerceraLinea}</p>
 
               <NetworkIcons
-                theme="white"
+                theme='white'
                 ytSlug={socialMediaInfo[2].route}
                 spSlug={socialMediaInfo[3].route}
               />
-
             </div>
           </div>
         </article>
       </section>
 
-      <section className="container-fluid">
-        <article className="container py-5">
-          <div className="row d-flex align-items-center">
-            <div className="col-md-6 align-self-center">
-              <div className="px-md-5 pb-5 mb-lg-0 pb-lg-0">
-                <Image src="/hero2-about.png" alt="girl" width={700} height={841} objectFit="contain" layout="responsive" />
+      <section className='container-fluid'>
+        <article className='container py-5'>
+          <div className='row d-flex align-items-center'>
+            <div className='col-md-6 align-self-center'>
+              <div className='px-md-5 pb-5 mb-lg-0 pb-lg-0'>
+                <Image
+                  src='/hero2-about.png'
+                  alt='girl'
+                  width={700}
+                  height={841}
+                  objectFit='contain'
+                  layout='responsive'
+                />
               </div>
             </div>
-            <div className="col-md-6">
-              <p className="text-uppercase fs-4">{t('owner_name')}</p>
-              <p className="">
-                {bloqueDeTexto}
-              </p>
+            <div className='col-md-6'>
+              <p className='text-uppercase fs-4'>{t('owner_name')}</p>
+              <p className=''>{bloqueDeTexto}</p>
             </div>
           </div>
         </article>
       </section>
 
-      <section className="container py-5">
-        <div className="row">
-          <div className="col">
-            <p className="text-uppercase fs-4">{t('last_episodes')}</p>
+      <section className='container py-5'>
+        <div className='row'>
+          <div className='col'>
+            <p className='text-uppercase fs-4'>{t('last_episodes')}</p>
           </div>
         </div>
-        <div className="row">
-          {episodes.length > 0 && episodes.map((item: any) => (
-            <div className="col-md-4" key={item.id}>
-              <EpisodeCard
-                slug={item.slug}
-                title={item.title}
-                description={item.description}
-                image={item.image}
-                audioDuration={item.audioDuration}
-                episodeNumber={item.episodeNumber}
-              />
-            </div>
-          ))}
+        <div className='row'>
+          {episodes.length > 0 &&
+            episodes.map((item: any) => (
+              <div className='col-md-4' key={item.id}>
+                <EpisodeCard
+                  slug={item.slug}
+                  title={item.title}
+                  description={item.description}
+                  image={item.image}
+                  audioDuration={item.audioDuration}
+                  episodeNumber={item.episodeNumber}
+                />
+              </div>
+            ))}
         </div>
       </section>
 
-      <section className="container py-5">
-        <div className="row justify-content-center py-5">
-          <div className="col-md-6">
+      <section className='container py-5'>
+        <div className='row justify-content-center py-5'>
+          <div className='col-md-6'>
             <Subscribe />
           </div>
         </div>
       </section>
-
     </Layout>
   );
 };

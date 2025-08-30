@@ -24,10 +24,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
           },
           method: 'POST',
-        },
+        }
       );
-      const captchaValidation: CaptchaValidationResponse = await response
-        .json() as CaptchaValidationResponse;
+      const captchaValidation: CaptchaValidationResponse =
+        (await response.json()) as CaptchaValidationResponse;
       if (captchaValidation.success) {
         return res.status(200).send('OK');
       }

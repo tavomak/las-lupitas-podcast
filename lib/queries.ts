@@ -54,7 +54,7 @@ export async function getEpisodeBySlug(slug: string[] | string | undefined) {
       variables: {
         slug,
       },
-    },
+    }
   );
   return data;
 }
@@ -75,13 +75,13 @@ export async function getAllServicesForHome(preview?: boolean) {
           ...(preview ? {} : { status: 'published' }),
         },
       },
-    },
+    }
   );
   return data;
 }
 
 export async function getAllEpisodesAndCategories(
-  preview?: boolean,
+  preview?: boolean
 ): Promise<PostAndMorePostsResult> {
   const data = await fetchAPI(
     `
@@ -115,7 +115,7 @@ export async function getAllEpisodesAndCategories(
       variables: {
         preview,
       },
-    },
+    }
   );
 
   return data;
@@ -138,7 +138,7 @@ export async function getLastEpisodes(): Promise<PostAndMorePostsResult> {
         audioDuration
       }
     }
-    `,
+    `
   );
 
   return data;

@@ -1,16 +1,23 @@
-@import '../utils/variables';
-@import '../utils/media';
-@import '../utils/mixins';
-
+@use 'styles/utils/variables' as *;
+@use '../utils/media' as *;
+@use '../utils/mixins' as *;
 
 .heading {
   min-height: 100vh;
-  background-image: url('/booble.png'), linear-gradient(to right, rgba(#29235C, 1), rgba(#29235C, 1));
-  background-position: center right, left;
+  background-image:
+    url('/booble.png'), linear-gradient(to right, rgba(#29235c, 1), rgba(#29235c, 1));
+  background-position:
+    center right,
+    left;
   background-size: cover;
   @include MQ(L) {
-    background-image: url('/hero-about.png'), url('/booble.png'), linear-gradient(to right, rgba(#29235C, 1), rgba(#29235C, 1));
-    background-position: center right, center right, left;
+    background-image:
+      url('/hero-about.png'), url('/booble.png'),
+      linear-gradient(to right, rgba(#29235c, 1), rgba(#29235c, 1));
+    background-position:
+      center right,
+      center right,
+      left;
     background-size: 40%, cover, cover;
     min-height: 87vh;
   }

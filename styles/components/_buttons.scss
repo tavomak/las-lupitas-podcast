@@ -1,106 +1,108 @@
+@use 'styles/utils/variables' as *;
+
 .btn {
+  border: none;
+  font-weight: $font-bold;
+  border-radius: 50rem;
+  color: $primary-color;
+
+  &-styleless {
     border: none;
-    font-weight: $font-bold;
-    border-radius: 50rem;
-    color: $primary-color;
+    background: none;
+    padding: 0;
+    font-weight: 400;
+  }
 
-    &-styleless {
-        border: none;
-        background: none;
-        padding: 0;
-        font-weight: 400;
+  &-primary {
+    border: 1px solid $secondary-color;
+    background: $secondary-color;
+    transition: all 0.1s ease-in-out;
+    color: $white;
+    &:hover {
+      border: 1px solid $white;
+      background: none;
+      box-shadow: 0 0.5rem 1.5rem rgb(98 52 130 / 20%) !important;
+      transform: translateY(-2px);
     }
 
-    &-primary {
-        border: 1px solid $secondary-color;
-        background: $secondary-color;
-        transition: all .1s ease-in-out;
-        color: $white;
-        &:hover {
-            border: 1px solid $white;
-            background: none;
-            box-shadow: 0 0.5rem 1.5rem rgb(98 52 130 / 20%) !important;
-            transform: translateY(-2px);
-        }
-
-        &:focus {
-            outline: none;
-            box-shadow: none;
-            background: $secondary-color;
-        }
-
-        &:disabled {
-            background: $secondary-color !important;
-        }
+    &:focus {
+      outline: none;
+      box-shadow: none;
+      background: $secondary-color;
     }
 
-    &-secondary{
-        border: 1px solid $white;
-        background: none;
-        transition: all .1s ease-in-out;
-        color: $white;
-        &:hover {
-            color: $secondary-color;
-            background: $white;
-            box-shadow: 0 0.5rem 1.5rem rgb(98 52 130 / 20%) !important;
-            transform: translateY(-2px);
-        }
+    &:disabled {
+      background: $secondary-color !important;
+    }
+  }
 
-        &:focus {
-            outline: none;
-            box-shadow: none;
-            background: $secondary-color;
-            color: $white;
-        }
-
-        &:disabled {
-            background: $secondary-color !important;
-        }
+  &-secondary {
+    border: 1px solid $white;
+    background: none;
+    transition: all 0.1s ease-in-out;
+    color: $white;
+    &:hover {
+      color: $secondary-color;
+      background: $white;
+      box-shadow: 0 0.5rem 1.5rem rgb(98 52 130 / 20%) !important;
+      transform: translateY(-2px);
     }
 
-    &-complementary{
-        border: 1px solid $white;
-        background: $primary-color;
-        color: $white;
-        transition: all .1s ease-in-out;
-        &:hover {
-            color: $white;
-            background: $secondary-color !important;
-            box-shadow: 0 0.5rem 1.5rem rgb(98 52 130 / 20%) !important;
-            transform: translateY(-2px);
-        }
-
-        &:focus {
-            outline: none;
-            box-shadow: none;
-            background: $white;
-            background: $primary-color;
-        }
-
-        &:disabled {
-            background: $white !important;
-        }
+    &:focus {
+      outline: none;
+      box-shadow: none;
+      background: $secondary-color;
+      color: $white;
     }
-    &-white{
-        border: 1px solid $white;
-        background: $white !important;
-        color: $secondary-color;
-        transition: all .1s ease-in-out;
-        &:hover {
-            color: $white;
-            background: $primary-color !important;
-            border: 1px solid $white;
-            box-shadow: 0 0.5rem 1.5rem rgb(98 52 130 / 20%) !important;
-            transform: translateY(-2px);
-        }
 
-        &:focus {
-            outline: none;
-            box-shadow: none;
-        }
-
-        &:disabled {
-            background: $primary-color !important;
-        }
+    &:disabled {
+      background: $secondary-color !important;
     }
+  }
+
+  &-complementary {
+    border: 1px solid $white;
+    background: $primary-color;
+    color: $white;
+    transition: all 0.1s ease-in-out;
+    &:hover {
+      color: $white;
+      background: $secondary-color !important;
+      box-shadow: 0 0.5rem 1.5rem rgb(98 52 130 / 20%) !important;
+      transform: translateY(-2px);
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: none;
+      background: $white;
+      background: $primary-color;
+    }
+
+    &:disabled {
+      background: $white !important;
+    }
+  }
+  &-white {
+    border: 1px solid $white;
+    background: $white !important;
+    color: $secondary-color;
+    transition: all 0.1s ease-in-out;
+    &:hover {
+      color: $white;
+      background: $primary-color !important;
+      border: 1px solid $white;
+      box-shadow: 0 0.5rem 1.5rem rgb(98 52 130 / 20%) !important;
+      transform: translateY(-2px);
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+
+    &:disabled {
+      background: $primary-color !important;
+    }
+  }
 }

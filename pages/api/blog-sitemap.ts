@@ -1,4 +1,4 @@
-import { getAllEpisodesAndCategories } from '@lib/queries';
+import { getAllEpisodesAndCategories } from '@/lib/queries';
 
 const { SitemapStream, streamToPromise } = require('sitemap');
 const { Readable } = require('stream');
@@ -8,8 +8,7 @@ const sitemapBlog = async (req: any, res: any) => {
 
   const baseUrl = 'https://www.las-lupitas.com';
 
-  const staticPages = allPosts.episodes
-    .map((item: any) => `${baseUrl}/episodios/${item.slug}`);
+  const staticPages = allPosts.episodes.map((item: any) => `${baseUrl}/episodios/${item.slug}`);
 
   const stream = new SitemapStream({ hostname: `https://${req.headers.host}` });
 
@@ -17,9 +16,9 @@ const sitemapBlog = async (req: any, res: any) => {
     'Content-Type': 'application/xml',
   });
 
-  const xmlString = await streamToPromise(
-    Readable.from(staticPages).pipe(stream),
-  ).then((data: any) => data.toString());
+  const xmlString = await streamToPromise(Readable.from(staticPages).pipe(stream)).then(
+    (data: any) => data.toString()
+  );
 
   res.end(xmlString);
 };

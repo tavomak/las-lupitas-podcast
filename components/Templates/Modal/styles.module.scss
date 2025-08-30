@@ -1,6 +1,6 @@
-@import "styles/utils/media";
-@import "styles/utils/mixins";
-@import "styles/utils/variables";
+@use 'styles/utils/media' as *;
+@use 'styles/utils/mixins' as *;
+@use 'styles/utils/variables' as *;
 .modal {
   position: fixed;
   z-index: 10;
@@ -10,8 +10,8 @@
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: darken(rgba(#3363FF, 0.6), 50%);
-  &Title{
+  background-color: darken(rgba(#3363ff, 0.6), 50%);
+  &Title {
     font-weight: 900;
     font-size: 22px;
   }
@@ -45,7 +45,7 @@
   border-radius: 50rem;
   right: 0;
   z-index: 1;
-  @include MQ(M){
+  @include MQ(M) {
     right: -10px;
   }
   &Icon {

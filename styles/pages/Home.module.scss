@@ -1,16 +1,23 @@
-@import '../utils/variables';
-@import '../utils/media';
-@import '../utils/mixins';
-
+@use 'styles/utils/variables' as *;
+@use '../utils/media' as *;
+@use '../utils/mixins' as *;
 
 .heading {
   min-height: 100vh;
-  background-image: url('/booble.png'), linear-gradient(to right, rgba(#29235C, 1), rgba(#29235C, 1));
-  background-position: center right, left;
+  background-image:
+    url('/booble.png'), linear-gradient(to right, rgba(#29235c, 1), rgba(#29235c, 1));
+  background-position:
+    center right,
+    left;
   background-size: cover;
   @include MQ(L) {
-    background-image: url('/hero-home.png'), url('/booble.png'), linear-gradient(to right, rgba(#29235C, 1), rgba(#29235C, 1));
-    background-position: center right, center right, left;
+    background-image:
+      url('/hero-home.png'), url('/booble.png'),
+      linear-gradient(to right, rgba(#29235c, 1), rgba(#29235c, 1));
+    background-position:
+      center right,
+      center right,
+      left;
     background-size: 40%, cover, cover;
     min-height: 87vh;
   }
@@ -50,7 +57,7 @@
 
 .wave {
   position: relative;
-  top: -3px
+  top: -3px;
 }
 
 .waveSmall {
@@ -76,7 +83,7 @@
 
 .rssIcon {
   position: relative;
-  transition: .5s all ease-in-out;
+  transition: 0.5s all ease-in-out;
 
   &::after {
     background: $secondary-color;
@@ -88,8 +95,7 @@
     width: 80px;
     height: 80px;
     @include centerer();
-    transition: .5s all ease-in-out;
-
+    transition: 0.5s all ease-in-out;
   }
 
   &Image {
@@ -101,7 +107,7 @@
 
 .rssLink {
   color: $white;
-  transition: .05s all ease-in-out;
+  transition: 0.05s all ease-in-out;
   &:hover {
     color: $complementary-color;
     .rssIcon::after {

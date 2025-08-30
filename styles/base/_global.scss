@@ -1,10 +1,13 @@
+@use 'styles/utils/variables' as *;
+
 * {
   box-sizing: border-box;
 }
-html,body{
+html,
+body {
   min-height: 100vh;
 }
-html{
+html {
   scroll-behavior: smooth;
 }
 body {
@@ -14,11 +17,11 @@ body {
 
 a {
   color: $primary-color;
-  transition: .2s ease-in-out all;
+  transition: 0.2s ease-in-out all;
   text-decoration: none;
   &:hover {
     text-decoration: none;
-    color: #2F80ED;
+    color: #2f80ed;
   }
   &:focus {
     text-decoration: none;
@@ -26,12 +29,13 @@ a {
   }
 }
 
-ul{
+ul {
   list-style-type: none;
   padding-left: 0;
 }
 
-strong, .font-bold {
+strong,
+.font-bold {
   font-weight: $font-bold;
 }
 
@@ -44,10 +48,10 @@ strong, .font-bold {
 }
 
 @each $name, $color in $palette {
-  .bg-#{""+$name} {
-    background-color: $color !important; 
+  .bg-#{'' + $name} {
+    background-color: $color !important;
   }
-  .text-#{""+$name} {
+  .text-#{'' + $name} {
     color: $color !important;
   }
 }
@@ -69,7 +73,7 @@ strong, .font-bold {
   width: 100%;
   height: 100%;
   z-index: 2;
-  background: rgba($secondary-color, .2)
+  background: rgba($secondary-color, 0.2);
 }
 
 .h-100 {
@@ -85,12 +89,14 @@ strong, .font-bold {
 }
 
 .grecaptcha-badge {
-  transform: scale(.3);
+  transform: scale(0.3);
 }
 
 .bubble {
   background: url('/bubble.png'), url('/bubble2.png');
-  background-position: left center, right center;
+  background-position:
+    left center,
+    right center;
   background-size: contain;
 }
 

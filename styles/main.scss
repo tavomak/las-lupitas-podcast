@@ -1,14 +1,16 @@
-// @import 'react-datepicker/dist/react-datepicker.css';
-// @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-@import 'bootstrap/dist/css/bootstrap.css';
+@use 'sass:meta';
+// @use 'utils/ as *;
 
-@import "utils/variables";
-@import "utils/media";
-@import "utils/mixins";
+// @use 'react-datepicker/dist/react-datepicker.css';
+// @use "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+// @use 'bootstrap/dist/css/bootstrap.css';
 
-@import "base/typography";
-@import "base/global";
+@include meta.load-css('utils/media');
+@include meta.load-css('utils/mixins');
 
-@import "components/hamburguer";
-@import "components/buttons";
-@import "components/transitions";
+// @include meta.load-css('base/typography');
+@include meta.load-css('base/global');
+
+@include meta.load-css('components/hamburguer');
+@include meta.load-css('components/buttons');
+@include meta.load-css('components/transitions');

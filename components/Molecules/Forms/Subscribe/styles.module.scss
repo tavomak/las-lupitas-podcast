@@ -1,9 +1,9 @@
-@import "styles/utils/mixins";
-@import "styles/utils/variables";
+@use 'styles/utils/mixins' as *;
+@use 'styles/utils/variables' as *;
 .form {
   &Input {
     border-color: $medium-grey;
-    height: 40px ;
+    height: 40px;
     position: relative;
     background: none;
     border-radius: 50rem;
@@ -14,10 +14,10 @@
     }
 
     &Error {
-      border: 1px solid #FD2626 !important;
+      border: 1px solid #fd2626 !important;
     }
     &SpanError {
-      color: #FD2626 !important;
+      color: #fd2626 !important;
     }
   }
 
@@ -33,7 +33,7 @@
 
   &Label {
     position: absolute;
-    transition: .1s all ease-in-out;
+    transition: 0.1s all ease-in-out;
     transform: translateY(15px);
     padding-left: 10px;
     left: 0;
@@ -41,7 +41,7 @@
 }
 
 .formInputError.form-control:focus {
-  border: 1px solid #FD2626 !important;
+  border: 1px solid #fd2626 !important;
 }
 
 .activeLabel {

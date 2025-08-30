@@ -1,6 +1,6 @@
 import { toast, ToastOptions } from 'react-toastify';
 
-const toastConfig : ToastOptions = {
+const toastConfig: ToastOptions = {
   position: 'top-center',
   autoClose: 5000,
   hideProgressBar: false,
@@ -11,7 +11,7 @@ const toastConfig : ToastOptions = {
 };
 
 const useNotify = () => {
-  const notification = (status : string, message: string) => {
+  const notification = (status: string, message: string) => {
     switch (status) {
       case 'success':
         toast.success(message, { ...toastConfig });

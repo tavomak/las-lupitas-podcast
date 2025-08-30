@@ -9,15 +9,15 @@ type Props = {
   children: string;
   close: string;
   handleClose: React.MouseEventHandler<HTMLAnchorElement>;
-  back: boolean,
-  handleBack: React.MouseEventHandler<HTMLAnchorElement>,
+  back: boolean;
+  handleBack: React.MouseEventHandler<HTMLAnchorElement>;
   footer: string;
   cardBackground: string | undefined;
-  onMouseLeave: React.MouseEventHandler<HTMLDivElement>,
-  shadow: boolean,
-  bRadius: string,
-  noBorderLine: boolean,
-}
+  onMouseLeave: React.MouseEventHandler<HTMLDivElement>;
+  shadow: boolean;
+  bRadius: string;
+  noBorderLine: boolean;
+};
 
 const Card = ({
   className,
@@ -44,37 +44,31 @@ const Card = ({
     }}
     onMouseLeave={onMouseLeave}
   >
-    {title
-      ? (
-        <ul className="d-flex w-100 justify-content-between">
-          {back && (
+    {title ? (
+      <ul className='d-flex w-100 justify-content-between'>
+        {back && (
           <li>
-            <a href="#!" onClick={handleBack}>
+            <a href='#!' onClick={handleBack}>
               volver
             </a>
           </li>
-          )}
+        )}
+        <li>
+          {title && <h4>{title}</h4>}
+          {subtitle && <p>{subtitle}</p>}
+        </li>
+        {close && (
           <li>
-            {title && (
-            <h4>{title}</h4>
-            )}
-            {subtitle && (
-            <p>{subtitle}</p>
-            )}
-          </li>
-          {close && (
-          <li>
-            <a href="#!" onClick={handleClose}>
-              <span aria-hidden="true" className="p-0 pe-3" style={{ fontSize: '22px' }}>&times;</span>
+            <a href='#!' onClick={handleClose}>
+              <span aria-hidden='true' className='p-0 pe-3' style={{ fontSize: '22px' }}>
+                &times;
+              </span>
             </a>
           </li>
-          )}
-        </ul>
-      )
-      : null}
-    <div className="card-body">
-      {children}
-    </div>
+        )}
+      </ul>
+    ) : null}
+    <div className='card-body'>{children}</div>
     {footer && footer}
   </div>
 );

@@ -1,3 +1,4 @@
+@use "sass:map";
 // Font
 $primary-font: 'Inter', sans-serif;
 $font-regular: 400;
@@ -6,25 +7,25 @@ $font-black: 800;
 
 // Colors
 $palette: (
-    light-grey: #F6F6F6,
-    medium-grey: #59565a,
-    dark-grey: #232323,
+  light-grey: #f6f6f6,
+  medium-grey: #59565a,
+  dark-grey: #232323,
 
-    primary-color: #2C3670,
-    secondary-color: #FF77FF,
-    complementary-color: #FEDE5A,
-    ascent-color: #5D1BFE,
+  primary-color: #2c3670,
+  secondary-color: #ff77ff,
+  complementary-color: #fede5a,
+  ascent-color: #5d1bfe,
 );
 
-$light-grey: map-get($palette,light-grey);
-$medium-grey: map-get($palette,medium-grey);
-$dark-grey: map-get($palette,dark-grey);
-$primary-color: map-get($palette,primary-color);
-$secondary-color: map-get($palette,secondary-color);
-$complementary-color: map-get($palette,complementary-color);
-$ascent-color: map-get($palette,ascent-color);
+$light-grey: map.get($palette, light-grey);
+$medium-grey: map.get($palette, medium-grey);
+$dark-grey: map.get($palette, dark-grey);
+$primary-color: map.get($palette, primary-color);
+$secondary-color: map.get($palette, secondary-color);
+$complementary-color: map.get($palette, complementary-color);
+$ascent-color: map.get($palette, ascent-color);
 
-$white:white;
+$white: white;
 $black: black;
 
 // Gradients

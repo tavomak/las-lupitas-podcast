@@ -10,8 +10,8 @@ export interface Post {
     url: string;
   };
   categories: {
-    name: string
-  }
+    name: string;
+  };
 }
 
 export interface MorePost {
@@ -27,5 +27,5 @@ export interface PostAndMorePostsResult {
   post: Post;
   morePosts: MorePost[];
   episodes: Post[];
-  categories: string
+  categories: string;
 }

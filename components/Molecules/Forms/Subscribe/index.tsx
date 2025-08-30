@@ -27,7 +27,7 @@ const FormSubscribe = () => {
   const [notification] = useNotify();
 
   const handleFocus = (e: React.FocusEvent<HTMLFormElement>) => {
-    setActiveTarget((state) => ({
+    setActiveTarget(state => ({
       ...state,
       [e.target.name]: true,
     }));
@@ -35,7 +35,7 @@ const FormSubscribe = () => {
 
   const handleBlur = (e: React.FocusEvent<HTMLFormElement>) => {
     if (e.target.value === '') {
-      setActiveTarget((state) => ({
+      setActiveTarget(state => ({
         ...state,
         [e.target.name]: false,
       }));
@@ -61,17 +61,21 @@ const FormSubscribe = () => {
         },
       });
       if (response.ok) {
-        emailjs.sendForm('service_6tucgh7', 'template_ex05dnc', form.current, 'MDfmR55yVZYpsAKKw')
-          .then((result) => {
-            // setLoading(false);
-            notification('success', '¡Gracias! Por suscribirte en nuestra newsletter');
-            console.log(result);
-            reset();
-          }, (error) => {
-            // setLoading(false);
-            console.log(error);
-            notification('error', '¡Mensaje no enviado, por favor inténtalo de nuevo!');
-          });
+        emailjs
+          .sendForm('service_6tucgh7', 'template_ex05dnc', form.current, 'MDfmR55yVZYpsAKKw')
+          .then(
+            result => {
+              // setLoading(false);
+              notification('success', '¡Gracias! Por suscribirte en nuestra newsletter');
+              console.log(result);
+              reset();
+            },
+            error => {
+              // setLoading(false);
+              console.log(error);
+              notification('error', '¡Mensaje no enviado, por favor inténtalo de nuevo!');
+            }
+          );
       } else {
         const error = await response.json();
         throw new Error(error.message);
@@ -90,69 +94,66 @@ const FormSubscribe = () => {
   return (
     <form
       ref={form}
-      className="form"
+      className='form'
       onSubmit={handleSubmit(handleClick)}
-      onFocus={(e) => handleFocus(e)}
-      onBlur={(e) => handleBlur(e)}
+      onFocus={e => handleFocus(e)}
+      onBlur={e => handleBlur(e)}
     >
       <ReCAPTCHA
         ref={reCaptchaRef}
-        size="invisible"
+        size='invisible'
         sitekey={recaptchaKey}
         onChange={onReCAPTCHAChange}
       />
-      <div className="row align-items-center">
-        <div className="col-md px-1">
-          <div className="form-group">
-            <label htmlFor="username" className="form-label w-100 position-relative">
-              <span className={`${styles.formLabel} ${activeTarget.username ? styles.activeLabel : ''}`}>
+      <div className='row align-items-center'>
+        <div className='col-md px-1'>
+          <div className='form-group'>
+            <label htmlFor='username' className='form-label w-100 position-relative'>
+              <span
+                className={`${styles.formLabel} ${activeTarget.username ? styles.activeLabel : ''}`}
+              >
                 Nombre
               </span>
               <input
-                type="text"
+                type='text'
                 className={`${styles.formInput} ${errors.username ? styles.formInputError : ''} form-control mt-2`}
                 {...register('username', { required: true, maxLength: 20 })}
               />
               {errors.username && (
-                <span className={styles.inputError}>
-                  Por favor ingresa un nombre válido
-                </span>
+                <span className={styles.inputError}>Por favor ingresa un nombre válido</span>
               )}
             </label>
           </div>
         </div>
-        <div className="col-md px-1">
-          <div className="form-group">
-            <label htmlFor="email" className="form-label w-100 position-relative">
-              <span className={`${styles.formLabel} ${activeTarget.email ? styles.activeLabel : ''}`}>
+        <div className='col-md px-1'>
+          <div className='form-group'>
+            <label htmlFor='email' className='form-label w-100 position-relative'>
+              <span
+                className={`${styles.formLabel} ${activeTarget.email ? styles.activeLabel : ''}`}
+              >
                 Email
               </span>
               <input
-                type="email"
+                type='email'
                 className={`${styles.formInput} ${errors.email ? styles.formInputError : ''} form-control mt-2`}
-                {...register(
-                  'email',
-                  {
-                    required: true,
-                    pattern: {
-                      value: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
-                      message: 'invalid email address',
-                    },
+                {...register('email', {
+                  required: true,
+                  pattern: {
+                    value: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+                    message: 'invalid email address',
                   },
-                )}
+                })}
               />
               {errors.email && (
-                <span className={styles.inputError}>
-                  Por favor ingresa un email válido
-                </span>
+                <span className={styles.inputError}>Por favor ingresa un email válido</span>
               )}
             </label>
           </div>
         </div>
-        <div className="col-md p-0">
+        <div className='col-md p-0'>
           <Button
-            className="btn btn-complementary text-uppercase py-2 px-4"
-            text="Suscribirte"
+            className='btn btn-complementary text-uppercase py-2 px-4'
+            text='Suscribirte'
             submit
           />
         </div>

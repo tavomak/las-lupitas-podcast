@@ -12,20 +12,18 @@
 
 // center vertically and/or horizontally an absolute positioned element
 
-@mixin center($xy:xy) {
+@mixin center($xy: xy) {
   @if $xy == xy {
     left: 50%;
     top: 50%;
     bottom: auto;
     right: auto;
     transform: translate(-50%, -50%);
-  }
-  @else if $xy == x {
+  } @else if $xy == x {
     left: 50%;
     right: auto;
     transform: translateX(-50%);
-  }
-  @else if $xy == y {
+  } @else if $xy == y {
     top: 50%;
     bottom: auto;
     transform: translateY(-50%);
@@ -49,7 +47,7 @@
   position: relative;
   &:before {
     display: block;
-    content: "";
+    content: '';
     width: 100%;
     padding-top: ($height / $width) * 100%;
   }

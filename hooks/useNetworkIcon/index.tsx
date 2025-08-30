@@ -1,9 +1,4 @@
-import {
-  FaSpotify,
-  FaYoutube,
-  FaInstagram,
-  FaTiktok,
-} from 'react-icons/fa';
+import { FaSpotify, FaYoutube, FaInstagram, FaTiktok } from 'react-icons/fa';
 
 const useNetworkIcon = () => {
   const getSocialMediaIconByName = (networkName: string) => {

@@ -1,5 +1,4 @@
 @keyframes a {
-
   0%,
   16.667%,
   100% {
@@ -13,7 +12,6 @@
 }
 
 @keyframes b {
-
   0%,
   100% {
     opacity: 0;
@@ -45,66 +43,66 @@
 
 @keyframes movedelement {
   0% {
-      transform: translate(0)
+    transform: translate(0);
   }
 
   25% {
-      transform: translate(10px,10px)
+    transform: translate(10px, 10px);
   }
 
   50% {
-      transform: translate(5px,5px)
+    transform: translate(5px, 5px);
   }
 
   75% {
-      transform: translate(10px,-5px)
+    transform: translate(10px, -5px);
   }
 
   to {
-      transform: translate(0)
+    transform: translate(0);
   }
 }
 
 @keyframes movedelement2 {
   0% {
-      transform: translate(0)
+    transform: translate(0);
   }
 
   25% {
-      transform: translate(-10px,-10px)
+    transform: translate(-10px, -10px);
   }
 
   50% {
-      transform: translate(-5px,-5px)
+    transform: translate(-5px, -5px);
   }
 
   75% {
-      transform: translate(-10px,5px)
+    transform: translate(-10px, 5px);
   }
 
   to {
-      transform: translate(0)
+    transform: translate(0);
   }
 }
 
 @keyframes movedelement3 {
   0% {
-      transform: translate(0)
+    transform: translate(0);
   }
 
   25% {
-      transform: translate(15px,15px)
+    transform: translate(15px, 15px);
   }
 
   50% {
-      transform: translate(8px,8px)
+    transform: translate(8px, 8px);
   }
 
   75% {
-      transform: translate(15px,-8px)
+    transform: translate(15px, -8px);
   }
 
   to {
-      transform: translate(0)
+    transform: translate(0);
   }
 }
