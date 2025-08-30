@@ -55,11 +55,11 @@
 
 .navLink {
   color: $primary-color;
-  &.home {
-    @include MQ(L) {
-      color: $white;
-    }
-  }
+  // &.home {
+  //   @include MQ(L) {
+  //     color: $white;
+  //   }
+  // }
   &:hover {
     color: $secondary-color;
   }

@@ -3,7 +3,7 @@ import { GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
 
 import { getAllServicesForHome, getLastEpisodes } from 'lib';
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 import useTranslation from 'next-translate/useTranslation';
 import Layout from '@/components/Templates/Layout';
 import Subscribe from '@/components/Molecules/Subscribe';

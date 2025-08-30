@@ -1,15 +1,18 @@
-@use 'styles/utils/variables' as *;
+@use '../utils/variables' as *;
 @use '../utils/media' as *;
 @use '../utils/mixins' as *;
 
 .heading {
-  min-height: 100vh;
+  align-items: center;
   background-image:
     url('/booble.png'), linear-gradient(to right, rgba(#29235c, 1), rgba(#29235c, 1));
   background-position:
     center right,
     left;
   background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  min-height: 100vh;
   @include MQ(L) {
     background-image:
       url('/hero-home.png'), url('/booble.png'),
@@ -21,9 +24,6 @@
     background-size: 40%, cover, cover;
     min-height: 87vh;
   }
-  display: flex;
-  align-items: center;
-  background-repeat: no-repeat;
 }
 
 .logoWrapper {

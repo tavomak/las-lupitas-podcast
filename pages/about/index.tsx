@@ -2,7 +2,7 @@ import type { NextPage } from 'next';
 import { GetStaticProps } from 'next';
 import { getAllServicesForHome, getLastEpisodes } from 'lib';
 import { socialMediaInfo } from '@/utils/constants';
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 import useTranslation from 'next-translate/useTranslation';
 import Layout from '@/components/Templates/Layout';
 import Subscribe from '@/components/Molecules/Subscribe';

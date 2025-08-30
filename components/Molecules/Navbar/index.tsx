@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import useTranslation from 'next-translate/useTranslation';
 import Link from 'next/link';
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 import { primaryLinks, socialMediaInfo, siteName } from 'utils';
 import { FaSpotify, FaYoutube, FaInstagram, FaTiktok } from 'react-icons/fa';
 import styles from './styles.module.scss';
@@ -71,9 +71,10 @@ const Navbar = () => {
               {primaryLinks.length &&
                 primaryLinks.map(item => (
                   <li className='nav-item position-relative px-2' key={item.name}>
-                    <Link href={item.route}>
-                      className={`nav-link ${styles.navLink} ${pathname === '/' && styles.home}`}
+                    <Link
                       href={item.route}
+                      className={`nav-link ${styles.navLink} ${pathname === '/' && styles.home}`}
+                    >
                       <p className='mb-0'>{t(item.name)}</p>
                     </Link>
                   </li>

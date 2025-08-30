@@ -3,14 +3,15 @@
 
 // @use 'react-datepicker/dist/react-datepicker.css';
 // @use "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-// @use 'bootstrap/dist/css/bootstrap.css';
+@use '../node_modules/bootstrap/dist/css/bootstrap.css';
+// @use 'bootstrap/scss/bootstrap.scss';
 
-@include meta.load-css('utils/media');
-@include meta.load-css('utils/mixins');
+@use './utils/media';
+@use './utils/mixins';
 
-// @include meta.load-css('base/typography');
-@include meta.load-css('base/global');
+// @use 'base/typography';
+@use './base/global';
 
-@include meta.load-css('components/hamburguer');
-@include meta.load-css('components/buttons');
-@include meta.load-css('components/transitions');
+@use './components/hamburguer';
+@use './components/buttons';
+@use './components/transitions';

@@ -1,4 +1,5 @@
-@use '@/styles/utils/variables'mixins' as *;
+@use 'sass:color';
+@use '@/styles/utils/mixin' as *;
 @use '@/styles/utils/variables' as *;
 .form {
   &Input {
@@ -11,7 +12,7 @@
 
     &:focus {
       border-color: none;
-      box-shadow: 0 0 0 0.25rem lighten($ascent-color, 25%);
+      box-shadow: 0 0 0 0.25rem color.ajust($ascent-color, $lightness: 25%);
     }
 
     &Error {
@@ -28,7 +29,7 @@
     background: none;
     &:focus {
       border-color: none;
-      box-shadow: 0 0 0 0.25rem lighten($ascent-color, 25%);
+      box-shadow: 0 0 0 0.25rem color.ajust($ascent-color, $lightness: 25%);
     }
   }
 
