@@ -1,6 +1,6 @@
 @use 'sass:color';
-@use '@/styles/utils/mixin' as *;
-@use '@/styles/utils/variables' as *;
+@use 'styles/utils/mixin' as *;
+@use 'styles/utils/variables' as *;
 .form {
   &Input {
     border-color: $medium-grey;
