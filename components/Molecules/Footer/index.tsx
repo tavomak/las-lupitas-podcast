@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import useTranslation from 'next-translate/useTranslation';
-import Image from "next/legacy/image";
+import Image from 'next/legacy/image';
 import Link from 'next/link';
 import { primaryLinks, socialMediaInfo, siteName } from 'utils';
 
