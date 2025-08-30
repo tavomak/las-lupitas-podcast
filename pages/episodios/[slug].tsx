@@ -6,6 +6,7 @@ import EpisodeImage from '@/components/Molecules/EpisodeImage';
 import Subscribe from '@/components/Molecules/Subscribe';
 import NetworkIcons from '@/components/Molecules/NetworkIcons';
 import NetworkButtons from '@/components/Molecules/NetworkButtons';
+import { rateLimit } from '@/utils';
 
 interface Props {
   episode: any;
@@ -67,6 +68,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     };
   }
 
+  await rateLimit();
   const data = await getEpisodeBySlug(params.slug);
 
   if (data.episode.length < 1) {

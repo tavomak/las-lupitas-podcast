@@ -11,7 +11,7 @@ import EpisodeCard from '@/components/Molecules/EpisodeCard';
 import NetworkIcons from '@/components/Molecules/NetworkIcons';
 import styles from 'styles/pages/Home.module.scss';
 import ButtonSubmit from '@/components/Atoms/Button';
-import { socialMediaInfo } from '@/utils/constants';
+import { socialMediaInfo, rateLimit } from '@/utils';
 
 interface Props {
   data: {
@@ -141,6 +141,7 @@ const Home: NextPage<Props> = ({ data, posts }) => {
 export default Home;
 
 export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
+  await rateLimit();
   const data = await getAllServicesForHome(preview);
   const posts = await getLastEpisodes();
   return {

@@ -10,6 +10,9 @@
     center right,
     left;
   background-size: cover;
+  display: flex;
+  align-items: center;
+  background-repeat: no-repeat;
   @include MQ(L) {
     background-image:
       url('/hero-about.png'), url('/booble.png'),
@@ -21,7 +24,4 @@
     background-size: 40%, cover, cover;
     min-height: 87vh;
   }
-  display: flex;
-  align-items: center;
-  background-repeat: no-repeat;
 }

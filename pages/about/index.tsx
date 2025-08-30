@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import { GetStaticProps } from 'next';
 import { getAllServicesForHome, getLastEpisodes } from 'lib';
-import { socialMediaInfo } from '@/utils/constants';
+import { socialMediaInfo, rateLimit } from '@/utils';
 import Image from 'next/legacy/image';
 import useTranslation from 'next-translate/useTranslation';
 import Layout from '@/components/Templates/Layout';
@@ -105,6 +105,7 @@ const About: NextPage<Props> = ({ data, posts }) => {
 export default About;
 
 export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
+  await rateLimit();
   const data = await getAllServicesForHome(preview);
   const posts = await getLastEpisodes();
   return {

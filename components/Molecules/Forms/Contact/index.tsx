@@ -16,7 +16,7 @@ const FormContact = () => {
     email: false,
     message: false,
   });
-  const form = useRef() as any;
+  const form = useRef(null) as any;
   const {
     register,
     handleSubmit,

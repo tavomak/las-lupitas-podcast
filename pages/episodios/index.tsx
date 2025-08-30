@@ -5,6 +5,7 @@ import { getAllEpisodesAndCategories } from 'lib';
 import useTranslation from 'next-translate/useTranslation';
 import Layout from '@/components/Templates/Layout';
 import EpisodeCard from '@/components/Molecules/EpisodeCard';
+import { rateLimit } from '@/utils';
 
 interface Props {
   posts: any;
@@ -72,6 +73,7 @@ const Episodios: NextPage<Props> = ({ posts, categories }) => {
 export default Episodios;
 
 export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
+  await rateLimit();
   const data = await getAllEpisodesAndCategories(preview);
   return {
     props: {
