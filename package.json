@@ -12,7 +12,7 @@
   "dependencies": {
     "@emailjs/browser": "^3.6.2",
     "bootstrap": "^5.3.8",
-    "next": "15.2.4",
+    "next": "15.2.8",
     "next-translate": "^2.0.5",
     "next-translate-plugin": "^2.6.2",
     "node-fetch": "^3.2.8",
